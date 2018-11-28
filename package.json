@@ -10,17 +10,6 @@
     "eject": "craco eject",
     "precommit": "pretty-quick --staged"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "plugins": [
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error"
-      ]
-    }
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
