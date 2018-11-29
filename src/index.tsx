@@ -4,21 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// import { sp } from "@pnp/sp";
+import { sp } from '@pnp/sp';
 
-// let baseUrl: string | undefined = undefined;
-// if (process.env.NODE_ENV !== 'production') {
-//     baseUrl = 'http://localhost:3001';
-// }
-
-// sp.setup({
-//   sp: {
-//     headers: {
-//       "Accept": "application/json;odata=verbose"
-//     },
-//     baseUrl
-//   }
-// });
+sp.setup({
+  sp: {
+    headers: {
+      Accept: 'application/json;odata=verbose'
+    }
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

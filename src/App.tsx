@@ -2,12 +2,27 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+import { sp } from '@pnp/sp';
+
+class App extends Component<{}, AppState> {
+  constructor(props: {}, context?: any) {
+    super(props, context);
+
+    this.state = {
+      title: ''
+    };
+  }
+
   async componentDidMount() {
-    console.dir('hi');
+    const fields = await sp.web.select('Title').get();
+
+    this.setState({
+      title: fields.Title
+    });
   }
 
   render() {
+    const { title } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -15,6 +30,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
+          <p>Connected to {title}</p>
           <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             Learn React
           </a>
@@ -25,3 +41,7 @@ class App extends Component {
 }
 
 export default App;
+
+interface AppState {
+  title: string;
+}
