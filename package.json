@@ -21,7 +21,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "CI=true npm test"
+      "pre-commit": "CI=true craco test"
     }
   },
   "dependencies": {
