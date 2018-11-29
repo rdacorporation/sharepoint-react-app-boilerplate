@@ -21,7 +21,23 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "CI=true craco test"
+      "pre-commit": "craco test --coverage"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
     }
   },
   "dependencies": {
@@ -46,12 +62,14 @@
   },
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
+    "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.9",
     "@types/lodash": "^4.14.118",
     "@types/node": "^10.12.10",
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.11",
     "@types/uuid": "^3.4.4",
+    "enzyme": "^3.7.0",
     "husky": "^1.2.0",
     "npm-run-all": "^4.1.5",
     "sp-rest-proxy": "^2.7.7",
