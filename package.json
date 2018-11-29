@@ -7,9 +7,11 @@
     "start": "node ./bin/sp-rest-proxy.js start",
     "build": "craco build",
     "test": "craco test",
+    "test:coverage": "craco test --coverage",
     "eject": "craco eject",
     "precommit": "pretty-quick --staged",
-    "prettier": "prettier --write '**/*.{js,ts,tsx}'"
+    "prettier": "prettier --write '**/*.{js,ts,tsx}'",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "browserslist": [
     ">0.2%",
@@ -17,9 +19,10 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 120
+  "husky": {
+    "hooks": {
+      "pre-commit": "CI=true npm test"
+    }
   },
   "dependencies": {
     "@craco/craco": "^3.1.1",
@@ -49,13 +52,11 @@
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.11",
     "@types/uuid": "^3.4.4",
-    "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "1.15.2",
-    "pretty-quick": "^1.8.0",
     "sp-rest-proxy": "^2.7.7",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0"
   }
 }

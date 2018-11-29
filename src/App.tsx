@@ -13,7 +13,7 @@ class App extends Component<{}, AppState> {
     };
   }
 
-  async componentDidMount() {
+  public async componentDidMount() {
     const fields = await sp.web.select('Title').get();
 
     this.setState({
@@ -21,7 +21,7 @@ class App extends Component<{}, AppState> {
     });
   }
 
-  render() {
+  public render() {
     const { title } = this.state;
     return (
       <div className="App">
