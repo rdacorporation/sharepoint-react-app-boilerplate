@@ -9,8 +9,9 @@
     "test": "craco test",
     "test:coverage": "craco test --coverage",
     "eject": "craco eject",
-    "precommit": "pretty-quick --staged",
-    "prettier": "prettier --write '**/*.{js,ts,tsx}'",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
+    "pre-commit-prettier": "pretty-quick --staged",
+    "pre-commit-test": "craco test --coverage",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "browserslist": [
@@ -21,8 +22,12 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "craco test --coverage"
+      "pre-commit": "run-s pre-commit-*"
     }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120
   },
   "jest": {
     "collectCoverageFrom": [
@@ -72,9 +77,12 @@
     "enzyme": "^3.7.0",
     "husky": "^1.2.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
     "sp-rest-proxy": "^2.7.7",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^3.6.0"
   }
 }
