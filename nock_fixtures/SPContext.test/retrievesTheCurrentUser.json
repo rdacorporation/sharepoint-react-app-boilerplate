@@ -1,0 +1,86 @@
+[
+  {
+    "scope": "http://localhost:3001",
+    "method": "OPTIONS",
+    "path": "/_api/web/currentuser",
+    "body": "",
+    "status": 204,
+    "response": "",
+    "rawHeaders": [
+      "X-Powered-By",
+      "Express",
+      "Access-Control-Allow-Origin",
+      "*",
+      "Access-Control-Allow-Methods",
+      "GET,HEAD,PUT,PATCH,POST,DELETE",
+      "Vary",
+      "Access-Control-Request-Headers",
+      "Access-Control-Allow-Headers",
+      "x-clientservice-clienttag, user-agent",
+      "Content-Length",
+      "0",
+      "Date",
+      "Fri, 30 Nov 2018 19:20:25 GMT",
+      "Connection",
+      "close"
+    ]
+  },
+  {
+    "scope": "http://localhost:3001",
+    "method": "GET",
+    "path": "/_api/web/currentuser",
+    "body": "",
+    "status": 200,
+    "response": {
+      "d": {
+        "__metadata": {
+          "id": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)",
+          "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)",
+          "type": "SP.User"
+        },
+        "Alerts": {
+          "__deferred": {
+            "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)/Alerts"
+          }
+        },
+        "Groups": {
+          "__deferred": {
+            "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)/Groups"
+          }
+        },
+        "Id": 11,
+        "IsHiddenInUI": false,
+        "LoginName": "i:0#.f|membership|sean@baristalabs.onmicrosoft.com",
+        "Title": "Sean McLellan",
+        "PrincipalType": 1,
+        "Email": "sean@baristalabs.onmicrosoft.com",
+        "IsEmailAuthenticationGuestUser": false,
+        "IsShareByEmailGuestUser": false,
+        "IsSiteAdmin": false,
+        "UserId": {
+          "__metadata": {
+            "type": "SP.UserIdInfo"
+          },
+          "NameId": "10037ffe9827b745",
+          "NameIdIssuer": "urn:federation:microsoftonline"
+        }
+      }
+    },
+    "rawHeaders": [
+      "X-Powered-By",
+      "Express",
+      "Access-Control-Allow-Origin",
+      "*",
+      "Content-Type",
+      "application/json; charset=utf-8; odata=verbose",
+      "Content-Length",
+      "771",
+      "ETag",
+      "W/\"303-xJXidI2ic4u7q/p1lysYUgCP7NA\"",
+      "Date",
+      "Fri, 30 Nov 2018 19:20:28 GMT",
+      "Connection",
+      "close"
+    ]
+  }
+]

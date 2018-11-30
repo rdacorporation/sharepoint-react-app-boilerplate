@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { sp } from '@pnp/sp';
+import { SPRestContext } from './services/SPContext';
 
 sp.setup({
   sp: {
@@ -14,7 +15,8 @@ sp.setup({
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const spRestContext = new SPRestContext();
+ReactDOM.render(<App context={spRestContext} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

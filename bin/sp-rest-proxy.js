@@ -3,8 +3,6 @@
 const runAll = require('npm-run-all');
 
 const args = process.argv.slice(2);
-const scriptIndex = args.findIndex(x => x === 'build' || x === 'start' || x === 'test');
-const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 
 require('dotenv').config();
 var RestProxy = require('sp-rest-proxy/dist/RestProxy');
@@ -15,25 +13,17 @@ var settings = {
 };
 var proxy = new RestProxy.default(settings);
 proxy.serve((server, context, settings) => {
-  switch (script) {
-    case 'build':
-    case 'start':
-    case 'test':
-      runAll([`${script}-*`], {
-        parallel: true,
-        stdout: process.stdout,
-        stderr: process.stderr
-      })
-        .then(() => {
-          process.exit();
-        })
-        .catch(err => {
-          console.dir(err);
-          process.exit(1);
-        });
-      break;
-    default:
-      console.log(`Unknown script "${script}".`);
-      break;
-  }
+  runAll(args, {
+    parallel: true,
+    stdout: process.stdout,
+    stderr: process.stderr,
+    stdin: process.stdin
+  })
+    .then(() => {
+      process.exit();
+    })
+    .catch(err => {
+      console.dir(err);
+      process.exit(1);
+    });
 });

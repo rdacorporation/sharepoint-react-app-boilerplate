@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { sp } from '@pnp/sp';
+import { SPContext } from './services/SPContext';
 
-class App extends Component<{}, AppState> {
-  constructor(props: {}, context?: any) {
+class App extends Component<AppProps, AppState> {
+  private _isMounted: boolean = false;
+
+  constructor(props: AppProps, context?: any) {
     super(props, context);
 
     this.state = {
@@ -14,11 +16,19 @@ class App extends Component<{}, AppState> {
   }
 
   public async componentDidMount() {
-    const fields = await sp.web.select('Title').get();
+    const { context } = this.props;
+    this._isMounted = true;
 
-    this.setState({
-      title: fields.Title
-    });
+    const title = await context.getRootWebTitle();
+
+    this._isMounted &&
+      this.setState({
+        title
+      });
+  }
+
+  public componentWillUnmount() {
+    this._isMounted = false;
   }
 
   public render() {
@@ -30,7 +40,9 @@ class App extends Component<{}, AppState> {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
-          <p>Connected to {title}</p>
+          <p>
+            Connected to <span id="rootWebTitle">{title}</span>
+          </p>
           <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             Learn React
           </a>
@@ -41,6 +53,10 @@ class App extends Component<{}, AppState> {
 }
 
 export default App;
+
+interface AppProps {
+  context: SPContext;
+}
 
 interface AppState {
   title: string;

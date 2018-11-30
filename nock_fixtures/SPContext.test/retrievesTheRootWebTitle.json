@@ -1,0 +1,61 @@
+[
+  {
+    "scope": "http://localhost:3001",
+    "method": "OPTIONS",
+    "path": "/_api/web?$select=Title",
+    "body": "",
+    "status": 204,
+    "response": "",
+    "rawHeaders": [
+      "X-Powered-By",
+      "Express",
+      "Access-Control-Allow-Origin",
+      "*",
+      "Access-Control-Allow-Methods",
+      "GET,HEAD,PUT,PATCH,POST,DELETE",
+      "Vary",
+      "Access-Control-Request-Headers",
+      "Access-Control-Allow-Headers",
+      "x-clientservice-clienttag, user-agent",
+      "Content-Length",
+      "0",
+      "Date",
+      "Fri, 30 Nov 2018 19:12:07 GMT",
+      "Connection",
+      "close"
+    ]
+  },
+  {
+    "scope": "http://localhost:3001",
+    "method": "GET",
+    "path": "/_api/web?$select=Title",
+    "body": "",
+    "status": 200,
+    "response": {
+      "d": {
+        "__metadata": {
+          "id": "https://baristalabs.sharepoint.com/_api/Web",
+          "uri": "https://baristalabs.sharepoint.com/_api/Web",
+          "type": "SP.Web"
+        },
+        "Title": "Barista Labs, LLC Team Site"
+      }
+    },
+    "rawHeaders": [
+      "X-Powered-By",
+      "Express",
+      "Access-Control-Allow-Origin",
+      "*",
+      "Content-Type",
+      "application/json; charset=utf-8; odata=verbose",
+      "Content-Length",
+      "179",
+      "ETag",
+      "W/\"b3-8HU3Y0r8/amQoWTZalkmBWHOYnA\"",
+      "Date",
+      "Fri, 30 Nov 2018 19:12:07 GMT",
+      "Connection",
+      "close"
+    ]
+  }
+]
