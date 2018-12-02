@@ -20,7 +20,7 @@
       "Content-Length",
       "0",
       "Date",
-      "Fri, 30 Nov 2018 19:20:25 GMT",
+      "Sat, 01 Dec 2018 16:07:31 GMT",
       "Connection",
       "close"
     ]
@@ -34,35 +34,29 @@
     "response": {
       "d": {
         "__metadata": {
-          "id": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)",
-          "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)",
+          "id": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)",
+          "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)",
           "type": "SP.User"
-        },
-        "Alerts": {
-          "__deferred": {
-            "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)/Alerts"
-          }
         },
         "Groups": {
           "__deferred": {
-            "uri": "https://baristalabs.sharepoint.com/_api/Web/GetUserById(11)/Groups"
+            "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)/Groups"
           }
         },
-        "Id": 11,
+        "Id": 1,
         "IsHiddenInUI": false,
-        "LoginName": "i:0#.f|membership|sean@baristalabs.onmicrosoft.com",
-        "Title": "Sean McLellan",
+        "LoginName": "i:0#.w|treasury\\administrator",
+        "Title": "Sean McLellan (Admin)",
         "PrincipalType": 1,
-        "Email": "sean@baristalabs.onmicrosoft.com",
-        "IsEmailAuthenticationGuestUser": false,
+        "Email": "superuser@treasury.gov",
         "IsShareByEmailGuestUser": false,
-        "IsSiteAdmin": false,
+        "IsSiteAdmin": true,
         "UserId": {
           "__metadata": {
             "type": "SP.UserIdInfo"
           },
-          "NameId": "10037ffe9827b745",
-          "NameIdIssuer": "urn:federation:microsoftonline"
+          "NameId": "s-1-5-21-2511887613-1794518828-2788763997-500",
+          "NameIdIssuer": "urn:office:idp:activedirectory"
         }
       }
     },
@@ -74,11 +68,11 @@
       "Content-Type",
       "application/json; charset=utf-8; odata=verbose",
       "Content-Length",
-      "771",
+      "636",
       "ETag",
-      "W/\"303-xJXidI2ic4u7q/p1lysYUgCP7NA\"",
+      "W/\"27c-VcyvQAyHpIPOllompt0xO2lre00\"",
       "Date",
-      "Fri, 30 Nov 2018 19:20:28 GMT",
+      "Sat, 01 Dec 2018 16:07:31 GMT",
       "Connection",
       "close"
     ]

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { SPContext } from './services/SPContext';
+import { AppService } from './services/AppService';
 
 class App extends Component<AppProps, AppState> {
   private _isMounted: boolean = false;
@@ -16,10 +17,11 @@ class App extends Component<AppProps, AppState> {
   }
 
   public async componentDidMount() {
-    const { context } = this.props;
+    const { context, appService } = this.props;
     this._isMounted = true;
 
     const title = await context.getRootWebTitle();
+    const foo = await appService.getTheAnswerToLifeTheUniverseAndEverything();
 
     this._isMounted &&
       this.setState({
@@ -56,6 +58,7 @@ export default App;
 
 interface AppProps {
   context: SPContext;
+  appService: AppService;
 }
 
 interface AppState {

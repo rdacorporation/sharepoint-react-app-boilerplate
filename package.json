@@ -6,8 +6,10 @@
     "start": "node ./bin/sp-rest-proxy.js start-dev-server",
     "start-dev-server": "craco start",
     "build": "craco build",
-    "test": "node ./bin/sp-rest-proxy.js test-coverage",
-    "test-coverage": "craco test --coverage",
+    "test": "node ./bin/sp-rest-proxy.js test-interactive",
+    "test-interactive": "craco test",
+    "test-coverage": "node ./bin/sp-rest-proxy.js test:coverage",
+    "test:coverage": "craco test --coverage",
     "eject": "craco eject",
     "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "pre-commit-prettier": "pretty-quick --staged",
@@ -21,7 +23,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "run-s pre-commit-prettier test"
+      "pre-commit": "run-s pre-commit-prettier test-coverage"
     }
   },
   "prettier": {
@@ -61,7 +63,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "typescript": "3.1.6",
+    "typescript": "3.2.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

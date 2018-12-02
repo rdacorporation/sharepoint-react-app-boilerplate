@@ -12,6 +12,7 @@ var settings = {
   staticRoot: process.env.SP_Rest_Proxy_StaticRoot || './static'
 };
 var proxy = new RestProxy.default(settings);
+// proxy.app.use('*/_vti_bin/barista/v1/barista.svc', proxy.routers.apiRestRouter);
 proxy.serve((server, context, settings) => {
   runAll(args, {
     parallel: true,

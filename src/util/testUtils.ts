@@ -5,6 +5,9 @@ import { sp } from '@pnp/sp';
 import path from 'path';
 
 let isFixtureSetup = false;
+
+export const baseUrl = 'http://localhost:3001/';
+
 export const setupFixture = async () => {
   if (isFixtureSetup) {
     return;
@@ -20,7 +23,7 @@ export const setupFixture = async () => {
   // Configure @pnp/sp...
   sp.setup({
     sp: {
-      baseUrl: 'http://localhost:3001',
+      baseUrl: baseUrl,
       headers: {
         Accept: 'application/json;odata=verbose'
       }
@@ -30,3 +33,5 @@ export const setupFixture = async () => {
   // All Done!
   isFixtureSetup = true;
 };
+
+export const waitForAsync = () => new Promise(resolve => setImmediate(resolve));

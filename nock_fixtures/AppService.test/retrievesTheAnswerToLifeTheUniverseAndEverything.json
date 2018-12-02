@@ -1,0 +1,26 @@
+[
+  {
+    "scope": "http://localhost:3001",
+    "method": "GET",
+    "path": "/_vti_bin/barista/v1/barista.svc/eval?c=6*7",
+    "body": "",
+    "status": 200,
+    "response": 42,
+    "rawHeaders": [
+      "X-Powered-By",
+      "Express",
+      "Access-Control-Allow-Origin",
+      "*",
+      "Content-Type",
+      "application/json;odata=verbose; charset=utf-8",
+      "Content-Length",
+      "2",
+      "ETag",
+      "W/\"2-ks/Os51X2RTtixTQ43ZD3geXrlY\"",
+      "Date",
+      "Sun, 02 Dec 2018 00:48:04 GMT",
+      "Connection",
+      "close"
+    ]
+  }
+]

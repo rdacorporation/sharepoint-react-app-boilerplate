@@ -20,7 +20,7 @@
       "Content-Length",
       "0",
       "Date",
-      "Fri, 30 Nov 2018 19:12:07 GMT",
+      "Sat, 01 Dec 2018 16:07:31 GMT",
       "Connection",
       "close"
     ]
@@ -34,11 +34,11 @@
     "response": {
       "d": {
         "__metadata": {
-          "id": "https://baristalabs.sharepoint.com/_api/Web",
-          "uri": "https://baristalabs.sharepoint.com/_api/Web",
+          "id": "http://ofs.treasuryecm.gov/ams-test/_api/Web",
+          "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web",
           "type": "SP.Web"
         },
-        "Title": "Barista Labs, LLC Team Site"
+        "Title": "AMS Test"
       }
     },
     "rawHeaders": [
@@ -49,11 +49,11 @@
       "Content-Type",
       "application/json; charset=utf-8; odata=verbose",
       "Content-Length",
-      "179",
+      "162",
       "ETag",
-      "W/\"b3-8HU3Y0r8/amQoWTZalkmBWHOYnA\"",
+      "W/\"a2-oqHwg4GQptmkYW35wO9FojjnZwE\"",
       "Date",
-      "Fri, 30 Nov 2018 19:12:07 GMT",
+      "Sat, 01 Dec 2018 16:07:31 GMT",
       "Connection",
       "close"
     ]

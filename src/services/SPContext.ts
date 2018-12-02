@@ -10,9 +10,15 @@ export class SPRestContext implements SPContext {
     const currentUser = await sp.web.currentUser.get();
     return currentUser;
   }
+
+  public async getContextInfo() {
+    const ctx = await sp.site.getContextInfo();
+    return ctx;
+  }
 }
 
 export interface SPContext {
   getRootWebTitle(): Promise<string>;
   getCurrentUser(): Promise<object>;
+  getContextInfo(): Promise<object>;
 }
