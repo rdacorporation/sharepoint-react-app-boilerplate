@@ -20,7 +20,7 @@ steps:
     displayName: 'Publish Test Results'
     inputs:
       testRunner: JUnit
-      testResultsFiles: ./test-results.xml
+      testResultsFiles: ./junit.xml
 
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish code coverage from $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
