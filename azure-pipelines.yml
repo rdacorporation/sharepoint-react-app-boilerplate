@@ -16,6 +16,12 @@ steps:
     inputs:
       Arguments: 'run test-ci'
 
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    inputs:
+      testRunner: JUnit
+      testResultsFiles: ./test-results.xml
+
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish code coverage from $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
     inputs:

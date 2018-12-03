@@ -79,5 +79,8 @@ typings/
 #DynamoDB Local files 
 .dynamodb/ 
 
+#test/build artifacts
 dist/
 sp-rest-proxy/
+junit.xml
+
