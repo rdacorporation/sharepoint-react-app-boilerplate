@@ -1,6 +1,6 @@
 ## sharepoint-react-app-boilerplate
 
-A SharePoint App boilerplate for creating React apps
+A boilerplate for creating React-based SPAs with SharePoint.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and enhanced with the following:
 
