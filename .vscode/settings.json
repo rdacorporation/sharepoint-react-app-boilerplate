@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
-  "debug.node.autoAttach": "off",
+  "debug.node.autoAttach": "on",
   "jest.showCoverageOnLoad": true
 }

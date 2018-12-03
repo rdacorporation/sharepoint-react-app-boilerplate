@@ -4,12 +4,32 @@ A SharePoint App boilerplate for creating React apps
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and enhanced with the following:
 
+### UI Components
+
+- [@material-ui/core](https://material-ui.com/) - React components that implement Google's Material Design.
+
+### Frameworks
+
 - [TypeScript](https://www.typescriptlang.org/) - Static type checking.
+- [lodash](https://lodash.com/) - A modern JavaScript utility library.
+- [moment](https://momentjs.com/) - Parse, validate, manipulate and display dates and times in JavaScript.
+- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js.
+
+### SharePoint
+
 - [sp-rest-proxy](https://github.com/koltyakov/sp-rest-proxy) - Provides a proxy to a SharePoint environment for live testing.
-- [prettier](https://prettier.io/) - Why lint when you can auto-fomat your code?
-- [craco](https://github.com/sharegate/craco) - A package created by the ShareGate team to allow configuring CRA without ejecting.
+- [@pnp/js](https://github.com/pnp/pnpjs) - Fluent JavaScript API for consuming SharePoint and Office 365 REST APIs with TypeScript support.
+
+### Unit Testing
+
 - [husky](https://github.com/typicode/husky) - Hooks git to perform custom tasks on pre-commit.
 - [nock](https://github.com/nock/nock) - Allows for mocking REST endpoints for end-to-end testing without a live backend.
+- [enzyme](https://airbnb.io/enzyme/) - JavaScript testing utility for React that makes it easier to assert, manipulate and traverse React components.
+
+### Other
+
+- [craco](https://github.com/sharegate/craco) - A package created by the ShareGate team to allow configuring CRA without ejecting.
+- [prettier](https://prettier.io/) - Why lint when you can auto-fomat your code?
 
 ## Available Scripts
 
@@ -53,4 +73,9 @@ if either of the above fail, the commit will not succeed.
 
 ## Suggested VSCode Extensions
 
-The `jest` extension will allow for interactive debugging when executing unit tests (?)
+- `TSLint` - Integrates TSLint with VSCode
+
+## Optional (untested/needs configuration)
+
+- `debugger-for-chrome` debug browser apps running in Chrome via VSCode without leaving VSCode
+- `jest` - Allows for interactive debugging when executing unit tests (?)
