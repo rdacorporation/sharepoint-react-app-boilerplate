@@ -31,6 +31,35 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [craco](https://github.com/sharegate/craco) - A package created by the ShareGate team to allow configuring CRA without ejecting.
 - [prettier](https://prettier.io/) - Why lint when you can auto-fomat your code?
 
+## Getting Started
+
+##### Prerequisites
+
+To start developing with sharepoint-react-app-boilerplate you'll need a few things: First, make sure you've got a recent version of node.js and git installed.
+
+I also recommend VSCode as an editor, but feel free to use whatever editor suits your fancy.
+
+##### Clone and Install Dependencies
+
+Next, you'll need to clone the sp-angular-webpack repository and install its dependencies.
+
+```bash
+# clone the repo
+$ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https://github.com/beyond-sharepoint/sharepoint-react-app-boilerplate/ my-app
+
+# change directory to your app
+$ cd my-app
+
+# install the dependencies with npm
+$ npm install
+```
+
+##### Develop
+
+Simply execute `$ npm start` to start a local development webserver. The first time it runs, it will prompt for your SharePoint environment and login. Now modify the files in your editor as needed!
+
+To reset the SharePoint configuration, simply delete the 'sp-rest-proxy' folder and re-run npm start, it will once again prompt for configuration.
+
 ## Available Scripts
 
 In the project directory, you can run:
