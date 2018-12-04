@@ -23,7 +23,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "run-s pre-commit-prettier test-coverage"
+      "pre-commit": "run-s pre-commit-prettier test-ci"
     }
   },
   "prettier": {
