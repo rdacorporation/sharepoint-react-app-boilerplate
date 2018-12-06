@@ -11,6 +11,7 @@
     "test-interactive": "craco test",
     "test-non-interactive": "CI=true craco --inspect test --no-cache --runInBand",
     "test-coverage": "node ./bin/sp-rest-proxy.js test-ci",
+    "test-vscode": "craco test --ci --coverage --reporters=default",
     "test-ci": "craco test --ci --coverage --reporters=default --reporters=jest-junit && node ./bin/inlineCoverageReportCSS.js",
     "eject": "craco eject",
     "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
