@@ -19,6 +19,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [sp-rest-proxy](https://github.com/koltyakov/sp-rest-proxy) - Provides a proxy to a SharePoint environment for live testing.
 - [@pnp/js](https://github.com/pnp/pnpjs) - Fluent JavaScript API for consuming SharePoint and Office 365 REST APIs with TypeScript support.
+- [sp-pnp-node](https://github.com/koltyakov/sp-pnp-node#readme) - Provides an easy way to use @pnp/js from node with support of various authentication strategies.
 
 ### Unit Testing
 
@@ -113,7 +114,5 @@ if either of the above fail, the commit will not succeed.
 ## Suggested VSCode Extensions
 
 - `TSLint` - Integrates TSLint with VSCode
-
-## Optional Extensions
-
-- `debugger-for-chrome` debug browser apps running in Chrome via VSCode without leaving VSCode
+- `debugger-for-chrome` - debug browser apps running in Chrome via VSCode without leaving VSCode
+- `jest` - auto-runs unit tests and shows code coverage
