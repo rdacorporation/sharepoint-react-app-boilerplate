@@ -17,7 +17,7 @@
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
     "label-position": true,
-    "max-line-length": [true, 120],
+    "max-line-length": [true, 200],
     "member-ordering": [
       false,
       {
@@ -61,15 +61,6 @@
       }
     ],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-module",
-      "check-operator",
-      "check-separator",
-      "check-type",
-      "check-typecast"
-    ]
+    "whitespace": [true, "check-branch", "check-decl", "check-module", "check-operator", "check-separator", "check-type", "check-typecast"]
   }
 }

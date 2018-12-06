@@ -7708,6 +7708,11 @@ node-fetch@^1.0.1:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
+node-fetch@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
+
 node-forge@0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
@@ -7788,7 +7793,7 @@ node-releases@^1.0.0-alpha.11, node-releases@^1.0.1:
   dependencies:
     semver "^5.3.0"
 
-node-sp-auth-config@^2.4.5, node-sp-auth-config@^2.5.6:
+node-sp-auth-config@^2.4.5, node-sp-auth-config@^2.5.4, node-sp-auth-config@^2.5.6:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/node-sp-auth-config/-/node-sp-auth-config-2.5.7.tgz#e35720106380be7b94355263b047d1415dfbe9b0"
   integrity sha512-ldSIoUuydq/Da8WNLgkMIHCIG9BRP7JHmN05N9HhBB54qXgq/465dIdAtRZmX39dccTV5gPIUDuD3e1clI8QBg==
@@ -10599,6 +10604,14 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+sp-pnp-node@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/sp-pnp-node/-/sp-pnp-node-2.1.3.tgz#721a78e1ed62652c2af57eceac215f2ca45804be"
+  integrity sha512-dDGdvMBRkw7rQ6+Rz8PBXe5FKDwrcA1hLHQHZRglvt1Z7Il00NDbAwO9nbzneIb43LG/ksr6OJ2WFxeB6ukVbQ==
+  dependencies:
+    node-fetch "^2.2.0"
+    node-sp-auth-config "^2.5.4"
 
 sp-request@^2.1.3:
   version "2.1.3"
