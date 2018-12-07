@@ -79,6 +79,9 @@ typings/
 #DynamoDB Local files 
 .dynamodb/ 
 
+#macOS Files
+.DS_store
+
 #test/build artifacts
 dist/
 sp-rest-proxy/
