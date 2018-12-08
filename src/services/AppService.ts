@@ -30,5 +30,5 @@ export class AppRestService implements AppService {
 }
 
 export interface AppService {
-  getTheAnswerToLifeTheUniverseAndEverything(): Promise<string>;
+  getTheAnswerToLifeTheUniverseAndEverything(): Promise<number>;
 }

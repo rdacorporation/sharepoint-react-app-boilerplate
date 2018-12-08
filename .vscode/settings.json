@@ -4,5 +4,6 @@
   "debug.node.autoAttach": "on",
   "jest.showCoverageOnLoad": true,
   "jest.pathToJest": "yarn test-vscode",
-  "jest.rootPath": "src"
+  "jest.rootPath": "src",
+  "tslint.configFile": "tslint.json"
 }

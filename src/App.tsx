@@ -12,7 +12,8 @@ class App extends Component<AppProps, AppState> {
     super(props, context);
 
     this.state = {
-      title: ''
+      title: '',
+      theAnswer: 0
     };
   }
 
@@ -21,11 +22,12 @@ class App extends Component<AppProps, AppState> {
     this._isMounted = true;
 
     const title = await context.getRootWebTitle();
-    const foo = await appService.getTheAnswerToLifeTheUniverseAndEverything();
+    const theAnswer = await appService.getTheAnswerToLifeTheUniverseAndEverything();
 
     this._isMounted &&
       this.setState({
-        title
+        title,
+        theAnswer
       });
   }
 
@@ -63,4 +65,5 @@ interface AppProps {
 
 interface AppState {
   title: string;
+  theAnswer: number;
 }
