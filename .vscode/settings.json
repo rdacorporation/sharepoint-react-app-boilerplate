@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
+  "typescript.preferences.quoteStyle": "single",
   "debug.node.autoAttach": "on",
   "jest.showCoverageOnLoad": true,
   "jest.pathToJest": "yarn test-vscode",
