@@ -1,8 +1,11 @@
 {
   "editor.formatOnSave": true,
+  "editor.autoClosingQuotes": "never",
+  "editor.tabSize": 2,
   "files.insertFinalNewline": true,
-  "typescript.preferences.quoteStyle": "single",
   "debug.node.autoAttach": "on",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.autoClosingTags": false,
   "jest.showCoverageOnLoad": true,
   "jest.pathToJest": "yarn test-vscode",
   "jest.rootPath": "src",
