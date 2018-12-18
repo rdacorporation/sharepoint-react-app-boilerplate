@@ -2,6 +2,12 @@ resources:
   - repo: self
 queue:
   name: Hosted Ubuntu 1604
+trigger:
+  - master
+  - releases/*
+pr:
+  - master
+  - releases/*
 steps:
   - task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@2
     displayName: 'Use Yarn 1.x'
