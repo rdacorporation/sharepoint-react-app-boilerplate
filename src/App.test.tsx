@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { setupFixture, waitForAsync } from './util/testUtils';
+import { setupFixture } from './util/testUtils';
 import App from './App';
 
 import { SPContext } from './services/SPContext';
 import { AppRestService } from './services/AppService';
+import { AppStore } from './AppContext';
 
 it('renders without crashing', async () => {
   await setupFixture();
@@ -22,14 +23,19 @@ it('renders without crashing', async () => {
     })
   }));
 
-  const mockContext = new MockContext();
-  const mockAppService = new MockAppService();
-  const wrapper = mount(<App context={mockContext} appService={mockAppService} />);
+  const MockAppStore = jest.fn<AppStore>(() => ({
+    appService: new MockAppService(),
+    spContext: new MockContext()
+  }));
 
-  await waitForAsync();
+  var mockAppStore = new MockAppStore();
+  const wrapper = mount(<App appStore={mockAppStore} />);
+  const instance = wrapper.instance() as App;
+
+  await instance.componentDidMount();
   const titleText = wrapper.find('#rootWebTitle').text();
   expect(titleText).toEqual('foo');
 
-  expect(mockContext.getRootWebTitle).toHaveBeenCalled();
+  expect(mockAppStore.spContext.getRootWebTitle).toHaveBeenCalled();
   wrapper.unmount();
 });

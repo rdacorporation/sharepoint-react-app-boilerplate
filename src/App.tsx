@@ -1,32 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { SPContext } from './services/SPContext';
-import { AppService } from './services/AppService';
+import { AppContext, AppStore } from './AppContext';
+import { AppTitle } from './AppTitle';
 
-class App extends Component<AppProps, AppState> {
+class App extends React.Component<AppProps, AppState> {
   private _isMounted: boolean = false;
 
   constructor(props: AppProps, context?: any) {
     super(props, context);
 
     this.state = {
-      title: '',
-      theAnswer: 0
+      theAnswer: 0,
+      appStore: props.appStore
     };
   }
 
   public async componentDidMount() {
-    const { context, appService } = this.props;
+    const { appStore } = this.props;
     this._isMounted = true;
 
-    const title = await context.getRootWebTitle();
-    const theAnswer = await appService.getTheAnswerToLifeTheUniverseAndEverything();
+    const theAnswer = await appStore.appService.getTheAnswerToLifeTheUniverseAndEverything();
 
     this._isMounted &&
       this.setState({
-        title,
         theAnswer
       });
   }
@@ -36,22 +34,24 @@ class App extends Component<AppProps, AppState> {
   }
 
   public render() {
-    const { title } = this.state;
+    const { appStore } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <p>
-            Connected to <span id="rootWebTitle">{title}</span>
-          </p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-        </header>
-      </div>
+      <AppContext.Provider value={appStore}>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+            </p>
+            <p>
+              Connected to <AppTitle />
+            </p>
+            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+              Learn React
+            </a>
+          </header>
+        </div>
+      </AppContext.Provider>
     );
   }
 }
@@ -59,11 +59,10 @@ class App extends Component<AppProps, AppState> {
 export default App;
 
 interface AppProps {
-  context: SPContext;
-  appService: AppService;
+  appStore: AppStore;
 }
 
 interface AppState {
-  title: string;
   theAnswer: number;
+  appStore: AppStore;
 }

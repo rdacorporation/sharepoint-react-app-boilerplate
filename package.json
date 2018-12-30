@@ -14,13 +14,13 @@
     "test-vscode": "craco test --ci --coverage --reporters=default",
     "test-ci": "craco test --ci --coverage --reporters=default --reporters=jest-junit && node ./bin/inlineCoverageReportCSS.js",
     "eject": "craco eject",
-    "prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
     "pre-commit-prettier": "pretty-quick --staged",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "deploy": "run-s build deploy-build",
-    "deploy-build-debug": "node --inspect ./node_modules/.bin/ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts './build/**' '/spapp/'",
-    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts './build/**' '/sp-app/'",
-    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts './src/api/**' '/sp-app/api/'"
+    "deploy-build-debug": "node --inspect ./node_modules/.bin/ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/ofsppp/\"",
+    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/ofsppp/\"",
+    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/ofsppp/\""
   },
   "browserslist": [
     ">0.2%",
@@ -28,6 +28,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "homepage": "./",
   "husky": {
     "hooks": {
       "pre-commit": "run-s pre-commit-prettier test-ci"
@@ -71,6 +72,7 @@
     "@pnp/logging": "^1.2.7",
     "@pnp/odata": "^1.2.7",
     "@pnp/sp": "^1.2.7",
+    "autobind-decorator": "^2.4.0",
     "axios": "^0.18.0",
     "clipboard": "^2.0.4",
     "lodash": "^4.17.11",
