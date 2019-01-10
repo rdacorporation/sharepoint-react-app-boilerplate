@@ -2,7 +2,7 @@
 
 A boilerplate for creating React-based SPAs with SharePoint.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and enhanced with the following:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and enhanced with the following modules to get started building a full-page SharePoint app as easy as possible.
 
 ### UI Components
 
@@ -31,6 +31,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [craco](https://github.com/sharegate/craco) - A package created by the ShareGate team to allow configuring CRA without ejecting.
 - [prettier](https://prettier.io/) - Why lint when you can auto-fomat your code?
+- [babel-polyfill](https://github.com/babel/babel/tree/master/packages/babel-polyfill) - Polyfills for non-modern browsers.
+- [fetch](https://github.com/github/fetch#readme) - Fetch support for non-modern browsers.
 
 ## Getting Started
 
@@ -43,7 +45,7 @@ I also recommend VSCode as an editor, but feel free to use whatever editor suits
 
 ##### Clone and Install Dependencies
 
-Next, you'll need to clone the sp-angular-webpack repository and install its dependencies.
+Next, you'll need to clone the sharepoint-react-app-boilerplate repository and install its dependencies.
 
 ```bash
 # clone the repo
@@ -52,15 +54,15 @@ $ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https:
 # change directory to your app
 $ cd my-app
 
-# install the dependencies with npm
-$ npm install
+# install the dependencies with yarn
+$ yarn install
 ```
 
 ##### Develop
 
-Simply execute `$ npm start` to start a local development webserver. The first time it runs, it will prompt for your SharePoint environment and login. Now modify the files in your editor as needed!
+Simply execute `$ yarn start` to start a local development webserver. The first time it runs, it will prompt for your SharePoint environment and login. Now modify the files in your editor as needed!
 
-To reset the SharePoint configuration, simply delete the 'sp-rest-proxy' folder and re-run npm start, it will once again prompt for configuration.
+To reset the SharePoint configuration, simply delete the 'sp-rest-proxy' folder and re-run `yarn start`, it will once again prompt for configuration.
 
 ## Available Scripts
 
@@ -116,3 +118,4 @@ if either of the above fail, the commit will not succeed.
 - `TSLint` - Integrates TSLint with VSCode
 - `debugger-for-chrome` - debug browser apps running in Chrome via VSCode without leaving VSCode
 - `jest` - auto-runs unit tests and shows code coverage
+- `Wallaby.js` - Continuous testing tool for JavaScript
