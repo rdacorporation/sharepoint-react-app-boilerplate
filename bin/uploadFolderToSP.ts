@@ -93,7 +93,8 @@ const uploadFolderToSP = async (sourceGlob: string, targetBasePath: string): Pro
     // Recursively ensure that the folder exists
     const p = path.parse(f).dir.split(path.sep);
     p.splice(0, 1);
-    const targetFilePath = targetBasePath + p.join(path.sep);
+    p.unshift(targetBasePath);
+    const targetFilePath = p.join(path.sep).replace(/\/(.*)/, '$1');
     const folder = await ensureSPPath(web, targetFilePath);
     if (!folder) {
       continue;
