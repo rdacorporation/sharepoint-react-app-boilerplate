@@ -177,7 +177,7 @@ Yes, the recommended approach to doing so is:
 3. Remove any already-configured authentication by removing the `sp-rest-proxy` folder.
 4. Utilize the app credentials by running `yarn start` and supplying the client id and secret recorded in step 1.
 5. Develop your application.
-6. Follow the steps above to build a docker container and host on container hosting services such as DigitalOcean, Azure App Service for Containers or AKS.
+6. Host the application using [sp-rest-proxy](https://github.com/koltyakov/sp-rest-proxy). For instance, by following the steps above to build a docker container, pushing it to a docker hub and utilizing hosting services such as [DigitalOcean](https://www.digitalocean.com/docs/one-clicks/docker/), [Azure App Service for Containers](https://azure.microsoft.com/en-us/services/app-service/containers/) or [AKS](https://azure.microsoft.com/en-us/services/kubernetes-service/).
 
 ### - Can I deploy my application that I created with sharepoint-react-app-boilerplate via a SharePoint app?
 
@@ -220,7 +220,7 @@ I suggest the [Component Folder Pattern](https://medium.com/styled-components/co
 
 ### - Can I interactively debug with VSCode while running this boilerplate?
 
-Yes - It's a bit finicky, but it works most of the the time all of the time. 
+Yes - It's a bit finicky, but it works most of the time all of the time. 
 
 Two VSCode launch configurations exist to allow for debugging unit tests and attaching to an existing Chrome instance to allow for debugging (`debugger-for-chrome` VSCode extension is required).
 
