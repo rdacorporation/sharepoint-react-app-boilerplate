@@ -34,11 +34,11 @@
     "response": {
       "d": {
         "__metadata": {
-          "id": "http://ofs.treasuryecm.gov/ams-test/_api/Web",
-          "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web",
+          "id": "http://sharepoint/my-site-collection/_api/Web",
+          "uri": "http://sharepoint/my-site-collection/_api/Web",
           "type": "SP.Web"
         },
-        "Title": "AMS Test"
+        "Title": "My Site Collection"
       }
     },
     "rawHeaders": [

@@ -14,14 +14,14 @@
           "FormDigestTimeoutSeconds": 1800,
           "FormDigestValue": "0x21A08B0891D4483AD9353CEF7655D3017E0F1DF2EF1951A16316CA280911EDA1214A359FD9451C1FFC7087C3D70E0E9C88A5B7878AFDCF22BE43431E0257C63A,01 Dec 2018 16:07:31 -0000",
           "LibraryVersion": "16.0.4678.1001",
-          "SiteFullUrl": "http://ofs.treasuryecm.gov/ams-test",
+          "SiteFullUrl": "http://sharepoint/my-site-collection",
           "SupportedSchemaVersions": {
             "__metadata": {
               "type": "Collection(Edm.String)"
             },
             "results": ["14.0.0.0", "15.0.0.0"]
           },
-          "WebFullUrl": "http://ofs.treasuryecm.gov/ams-test"
+          "WebFullUrl": "http://sharepoint/my-site-collection"
         }
       }
     },
@@ -83,14 +83,14 @@
           "FormDigestTimeoutSeconds": 1800,
           "FormDigestValue": "0x21A08B0891D4483AD9353CEF7655D3017E0F1DF2EF1951A16316CA280911EDA1214A359FD9451C1FFC7087C3D70E0E9C88A5B7878AFDCF22BE43431E0257C63A,01 Dec 2018 16:07:31 -0000",
           "LibraryVersion": "16.0.4678.1001",
-          "SiteFullUrl": "http://ofs.treasuryecm.gov/ams-test",
+          "SiteFullUrl": "http://sharepoint/my-site-collection",
           "SupportedSchemaVersions": {
             "__metadata": {
               "type": "Collection(Edm.String)"
             },
             "results": ["14.0.0.0", "15.0.0.0"]
           },
-          "WebFullUrl": "http://ofs.treasuryecm.gov/ams-test"
+          "WebFullUrl": "http://sharepoint/my-site-collection"
         }
       }
     },

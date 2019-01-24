@@ -34,13 +34,13 @@
     "response": {
       "d": {
         "__metadata": {
-          "id": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)",
-          "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)",
+          "id": "http://sharepoint/my-site-collection/_api/Web/GetUserById(1)",
+          "uri": "http://sharepoint/my-site-collection/_api/Web/GetUserById(1)",
           "type": "SP.User"
         },
         "Groups": {
           "__deferred": {
-            "uri": "http://ofs.treasuryecm.gov/ams-test/_api/Web/GetUserById(1)/Groups"
+            "uri": "http://sharepoint/my-site-collection/_api/Web/GetUserById(1)/Groups"
           }
         },
         "Id": 1,

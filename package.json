@@ -23,9 +23,9 @@
     "pre-commit-prettier": "pretty-quick --staged",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "deploy": "run-s build deploy-build",
-    "deploy-build-debug": "node --inspect ./node_modules/.bin/ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/ofsppp/\"",
-    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/ofsppp/\"",
-    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/ofsppp/\"",
+    "deploy-build-debug": "node --inspect ./node_modules/.bin/ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/my-sp-react-app/\"",
+    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/my-sp-react-app/\"",
+    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/my-sp-react-app/\"",
     "docker-build": "docker build --rm -t docker-user/sp-react-app:latest .",
     "docker-run": "docker run -p 3000:3000 -p 3001:3001 -d docker-user/sp-react-app"
   },
