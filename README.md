@@ -132,13 +132,13 @@ if the above fails, the commit will not succeed.
 
 ## FAQ
 
-- Why would I use sharepoint-react-app-boilerplate over SharePoint Framework (SPFx)?
+### - Why would I use sharepoint-react-app-boilerplate over SharePoint Framework (SPFx)?
 
   If you're _extending_ SharePoint through webparts, application customizers, field customizers, or command sets, SPFx is the choice for you.
 
   If you're _integrating_ SharePoint by treating it as a headless CMS, building apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without wanting to pay the SharePoint branding tax, or composing an application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
 
-- Can I build a docker container that hosts my application?
+### - Can I build a docker container that hosts my application?
 
   Yes. The scripts to do so are part of this boilerplate.
 
@@ -151,7 +151,7 @@ if the above fails, the commit will not succeed.
 
   Be wary of the SharePoint REST endpoint limits. You may want to provide a caching layer in between the app and SharePoint to minimize SharePoint traffic (outside the scope of this project).
 
-- Is it possible to have a site created with sharepoint-react-app-boilerplate hosted outside of SharePoint, that uses an app account to retrieve content? (NodeJS-based Provider Hosted App using App Credentials)
+### - Is it possible to have a site created with sharepoint-react-app-boilerplate hosted outside of SharePoint, that uses an app account to retrieve content? (NodeJS-based Provider Hosted App using App Credentials)
 
   Yes, the recommended approach to doing so is:
 
@@ -161,7 +161,7 @@ if the above fails, the commit will not succeed.
   4. Develop your application.
   5. Follow the steps above to build a docker container and host on container hosting services such as DigitalOcean, Azure App Service for Containers or AKS.
 
-- Can I deploy my application that I created with sharepoint-react-app-boilerplate via a SharePoint app?
+### - Can I deploy my application that I created with sharepoint-react-app-boilerplate via a SharePoint app?
 
   Yes - this has been done with this boilerplate.
 
@@ -174,32 +174,34 @@ if the above fails, the commit will not succeed.
 
   These steps can be performed as part of a CI/CD process by dynamically generating a .csproj and inserting the files contained in the ./build folder. This has been done before with this boilerplate, but we currently don't provide the generator project, scripts or template to do so.
 
-- Can I use sharepoint-react-app-boilerplate as part of an Azure DevOps build pipeline?
+### - Can I use sharepoint-react-app-boilerplate as part of an Azure DevOps build pipeline?
 
-  Yes, a sample azure-pipelines.yml file is part of this boilerplate. The 'Yarn' Azure DevOps extension is required.
+  Yes, a sample `azure-pipelines.yml` file is part of this boilerplate. The 'Yarn' Azure DevOps extension is required.
 
-- Can I use Office UI Fabric instead of Material Design?
+### - Can I use Office UI Fabric instead of Material Design?
 
   Yes, simply remove the material design package and add office ui fabric
 
   `yarn remove @material-ui/core @material-ui/icons`
+  
   `yarn add office-ui-fabric-react`
 
-- I'm more familiar with Bootstrap for styling, how do I use Bootstrap instead of Material Design?
+### - I'm more familiar with Bootstrap for styling, how do I use Bootstrap instead of Material Design?
 
   Remove material ui and add bootstrap
 
   `yarn remove @material-ui/core @material-ui/icons`
+  
   `yarn add bootstrap reactstrap`
 
-- How do I upgrade the packages within my app?
+### - How do I upgrade the packages within my app?
 
   I highly recommend [npm-check-updates](https://github.com/tjunnone/npm-check-updates). Install with `yarn install -g npm-check-updates` and run with `ncu` in your project folder.
 
-- Can I use sharepoint-react-app-boilerplate in conjunction with other projects stored in a single repository?
+### - Can I use sharepoint-react-app-boilerplate in conjunction with other projects stored in a single repository?
 
   I would recommend to use sharepoint-react-app-boilerplate within a monorepo approach.
 
-- What projects has sharepoint-react-app-boilerplate been used on?
+### - What projects has sharepoint-react-app-boilerplate been used on?
 
   We have used sharepoint-react-app-boilerplate number of internal projects hosted on SharePoint. The [Brightcove SharePoint Connector](https://github.com/BrightcoveOS/SharePoint-Connector) is also based on this boilerplate.
