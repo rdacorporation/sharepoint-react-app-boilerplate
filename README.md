@@ -135,8 +135,8 @@ On pre-commit this boilerplate will:
 
 if the above fails, the commit will not succeed.
 
-> Note: Previous versions of this boilerplate also executed unit tests to ensure a standard of code coverage.
-> In practice, this hindered rather than helped development by reducing commits
+> Note: Previous versions of this boilerplate also executed unit tests on commit to ensure a standard of code coverage.
+> In practice, this hindered rather than helped development by reducing commits.
 > If code-coverage on commit is desired, add `test-ci` to the husky pre-commit hook in package.json
 
 ## Suggested VSCode Extensions
@@ -152,7 +152,7 @@ if the above fails, the commit will not succeed.
 
 If you're _extending_ SharePoint through webparts, application customizers, field customizers, or command sets, SPFx is the choice for you.
 
-If you're _integrating_ SharePoint by treating it as a headless CMS, building apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without wanting to pay the SharePoint branding tax, or composing an application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
+If you're _integrating_ SharePoint by treating it as a headless CMS, building apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without paying the SharePoint branding tax, or composing an application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
 
 ### - Can I build a docker container that hosts my application?
 
@@ -174,9 +174,10 @@ Yes, the recommended approach to doing so is:
 
 1. Create your app credentials by visiting `https://<your tenant>/_layouts/15/appregnew.aspx`. Record the client id and secret.
 2. Modify the app permission level by visiting `https://<your tenant>/_layouts/15/appinv.aspx` and supplying the desired permissions xml and by creating and trusting it on the same page.
-3. Remove any already-configured authentication by removing the `sp-rest-proxy` folder. Utilize the app credentials by running `yarn start` and supplying the client id and secret recorded in step 1.
-4. Develop your application.
-5. Follow the steps above to build a docker container and host on container hosting services such as DigitalOcean, Azure App Service for Containers or AKS.
+3. Remove any already-configured authentication by removing the `sp-rest-proxy` folder.
+4. Utilize the app credentials by running `yarn start` and supplying the client id and secret recorded in step 1.
+5. Develop your application.
+6. Follow the steps above to build a docker container and host on container hosting services such as DigitalOcean, Azure App Service for Containers or AKS.
 
 ### - Can I deploy my application that I created with sharepoint-react-app-boilerplate via a SharePoint app?
 
@@ -211,9 +212,21 @@ Remove material ui and add bootstrap
 
 `yarn add bootstrap reactstrap`
 
+[MDBReact](https://mdbootstrap.com/docs/react/) is an option as well.
+
 ### - This is a start, but how should I structure my components?
 
 I suggest the [Component Folder Pattern](https://medium.com/styled-components/component-folder-pattern-ee42df37ec68)
+
+### - Can I interactively debug with VSCode while running this boilerplate?
+
+Yes - It's a bit finicky, but it works most of the the time all of the time. 
+
+Two VSCode launch configurations exist to allow for debugging unit tests and attaching to an existing Chrome instance to allow for debugging (`debugger-for-chrome` VSCode extension is required).
+
+You may also find success by ensuring that VSCode is configured to 'Auto-Attach' (configuration exists in this project to do so by default) and running `yarn test-debug` in VSCode terminal to debug unit tests. The bottom bar should turn orange and VSCode will stop at breakpoints.
+
+If you have a way of making this process more streamlined and reliable, through better VSCode launch configuration or other avenues, we welcome the pull request.
 
 ### - How do I upgrade the packages within my app?
 
@@ -221,8 +234,8 @@ I highly recommend [npm-check-updates](https://github.com/tjunnone/npm-check-upd
 
 ### - Can I use sharepoint-react-app-boilerplate in conjunction with other projects stored in a single repository?
 
-I would recommend to use sharepoint-react-app-boilerplate within a monorepo approach.
+I would recommend to use sharepoint-react-app-boilerplate within a [monorepo](https://github.com/korfuri/awesome-monorepo) approach. Go multi-repo if that suits your project/team.
 
 ### - What projects has sharepoint-react-app-boilerplate been used on?
 
-We have used sharepoint-react-app-boilerplate number of internal projects hosted on SharePoint. The [Brightcove SharePoint Connector](https://github.com/BrightcoveOS/SharePoint-Connector) is also based on this boilerplate.
+We have used sharepoint-react-app-boilerplate on a number of customer-facing projects hosted on SharePoint. The [Brightcove SharePoint Connector](https://github.com/BrightcoveOS/SharePoint-Connector) is also based on this boilerplate.
