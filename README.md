@@ -230,15 +230,15 @@ If you have a way of making this process more streamlined and reliable, through 
 
 ### - Can I run the unit tests on an automated build server that doesn't have access to a SharePoint environment?
 
-Yes - This boilerplate utilizes Nock to record and mock the SharePoint REST requests/responses. Follow the pattern in ./src/services/\*.test.ts to setup your tests to mock the interaction with SharePoint so that concerns are seperated and you're only testing the front-end components. This solves a plethora of issues commonly encountered when attempting to provide a reasonable amount of code coverage with SharePoint (or other) backed REST services.
+Yes - This boilerplate utilizes Nock to record and mock the SharePoint REST requests/responses. Follow the pattern in ./src/services/\*.test.ts to setup your tests to mock the interaction with SharePoint so that concerns are seperated and you're only testing the front-end components. This solves a plethora of issues commonly encountered when attempting to utilize CI/CD practices while providing a reasonable amount of code coverage with SharePoint (or other) backed REST services.
 
 In General:
 1. Develop components/stores that interact with SharePoint in some manner.
 2. Create unit tests that test these stores.
-3. Run the unit tests so that the test fixtures in ./nock_fixtures/ are created. Remove the ./nock_fixtures folder and re-run if you wish to run all unit tests directly against your SharePoint environment.
+3. Run the unit tests so that corresponding test fixtures in ./nock_fixtures/ are created. Remove the ./nock_fixtures folder and re-run if you wish to run all unit tests directly against your SharePoint environment.
 4. Once unit tests pass, commit changes along with the ./nock_fixtures/ folder.
 
-If you have automated builds on commit configured, the builds will run the unit tests using the mocked responses, thus not requiring a live connection to a SharePoint environment from the build server. Consult the [nock documentation](https://github.com/nock/nock#readme) for further information and advanced scenarios.
+If you have automated builds on commit configured, your build server will run the unit tests using the mocked responses, thus not requiring a live connection to a SharePoint environment from the build server. Consult the [nock documentation](https://github.com/nock/nock#readme) for further information and advanced scenarios.
 
 ### - How do I upgrade the packages within my app?
 
