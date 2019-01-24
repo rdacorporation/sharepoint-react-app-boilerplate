@@ -2,6 +2,7 @@ import axios from 'axios';
 
 /**
  * Example of an application service that calls a rest endpoint.
+ * This is just an example of calling a REST service hosted by SharePoint or external to SharePoint.
  */
 export class AppRestService implements AppService {
   private _webFullUrl: string | undefined;

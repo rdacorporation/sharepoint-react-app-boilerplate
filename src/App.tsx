@@ -21,6 +21,7 @@ class App extends React.Component<AppProps, AppState> {
     const { appStore } = this.props;
     this._isMounted = true;
 
+    // Example of calling a custom SharePoint service application.
     const theAnswer = await appStore.appService.getTheAnswerToLifeTheUniverseAndEverything();
 
     this._isMounted &&
