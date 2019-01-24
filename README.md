@@ -166,7 +166,7 @@ If building a container that runs in a production environment, you may want to c
 
 > Note: sp-rest-proxy encrypts credentials with a local machine key, ensure that the sp-rest-proxy options set to `encryptPassword: false` or supply desired credentials via environment variables.
 
-Be wary of the SharePoint Online REST endpoint limits. You may want to provide a caching layer in between the app and SharePoint to minimize SharePoint traffic (outside the scope of this project).
+Be wary of the [SharePoint Online REST endpoint limits](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online). You may want to provide a caching layer in between the app and SharePoint to minimize SharePoint traffic (outside the scope of this project).
 
 ### - Is it possible to have a site created with sharepoint-react-app-boilerplate hosted outside of SharePoint, that uses an app account to retrieve content? (NodeJS-based Provider Hosted App using App Credentials)
 
