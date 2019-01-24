@@ -52,7 +52,7 @@ Next, you'll need to clone the sharepoint-react-app-boilerplate repository and i
 
 ```bash
 # clone the repo
-$ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https://github.com/beyond-sharepoint/sharepoint-react-app-boilerplate/ my-app
+$ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https://github.com/rdacorporation/sharepoint-react-app-boilerplate/ my-app
 
 # change directory to your app
 $ cd my-app
