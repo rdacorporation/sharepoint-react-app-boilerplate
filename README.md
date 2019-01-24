@@ -2,7 +2,7 @@
 
 An opinionated boilerplate for creating React-based SPAs utilizing TypeScript that are backed by SharePoint REST services.
 
-This boilerplate facilitates the creation of apps that _integrate_ SharePoint
+This boilerplate facilitates the creation of apps that _integrate_ rather than _extend_ SharePoint. With it you can create stand-alone applications, fully-branded experiendes, RPAs and tools that utilize SharePoint as a data source.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and enhanced with the following modules to get started building a full-page SharePoint app as easy as possible.
 
