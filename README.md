@@ -143,6 +143,7 @@ if the above fails, the commit will not succeed.
   Yes. The scripts to do so are part of this boilerplate.
 
   `yarn docker-build`
+  
   `yarn docker-run`
 
   If building a container that runs in a production environment, you may want to configure the dockerfile to run a streamlined express server behind an nginx proxy rather than the currently configured webpack development server.
