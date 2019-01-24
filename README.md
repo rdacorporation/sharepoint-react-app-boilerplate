@@ -2,7 +2,7 @@
 
 An opinionated boilerplate for creating React-based SPAs utilizing TypeScript that are backed by SharePoint REST services.
 
-This boilerplate facilitates the creation of apps that _integrate_ rather than _extend_ SharePoint. With it you can create stand-alone applications, fully-branded experiences, RPAs and tools that utilize SharePoint as a data source. Used as a pre-built starter, this project integrates a number of packages and configuration to ease the developer experience, allowing for the local serve of apps while in development, proxying the SharePoint network communication to an actual SharePoint environment as well as other pre-configured functionality.
+This boilerplate facilitates the creation of apps that _integrate_ rather than _extend_ SharePoint. With it you can create stand-alone React-based applications, fully-branded experiences, RPAs and tools that utilize SharePoint as a data source. Used as a pre-built starter, this project integrates a number of packages and configuration to ease the developer experience, allowing for the local serve of apps while in development, proxying the SharePoint network communication to an actual SharePoint environment as well as other pre-configured functionality.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with [typescript](https://facebook.github.io/create-react-app/docs/adding-typescript) and enhanced with the following modules to get started building a full-page SharePoint app as quickly as possible.
 
@@ -152,7 +152,7 @@ if the above fails, the commit will not succeed.
 
 If you're _extending_ SharePoint through webparts, application customizers, field customizers, or command sets, SPFx is the choice for you.
 
-If you're _integrating_ SharePoint by treating it as a headless CMS, building apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without paying the SharePoint branding tax, or composing an application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
+If you're _integrating_ SharePoint by treating it as a headless CMS, building React-based apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without paying the SharePoint branding tax, or composing an React-based application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
 
 ### - Can I build a docker container that hosts my application?
 
