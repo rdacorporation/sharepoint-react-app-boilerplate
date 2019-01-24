@@ -211,6 +211,10 @@ Remove material ui and add bootstrap
 
 `yarn add bootstrap reactstrap`
 
+### - This is a start, but how should I structure my components?
+
+I suggest the [Component Folder Pattern](https://medium.com/styled-components/component-folder-pattern-ee42df37ec68)
+
 ### - How do I upgrade the packages within my app?
 
 I highly recommend [npm-check-updates](https://github.com/tjunnone/npm-check-updates). Install with `yarn install -g npm-check-updates` and run with `ncu` in your project folder.
