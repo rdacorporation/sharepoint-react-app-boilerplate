@@ -2,7 +2,7 @@
 
 An opinionated boilerplate for creating React-based SPAs utilizing TypeScript that are backed by SharePoint REST services.
 
-This boilerplate facilitates the creation of apps that _integrate_ rather than _extend_ SharePoint. With it you can create stand-alone applications, fully-branded experiences, RPAs and tools that utilize SharePoint as a data source. Used as a pre-built starter, this project integrates a number of packages and configuration to ease the developer experience, allowing for the local serve of apps while in development, proxying the SharePoint network communication to an actual SharePoint environment as well as other pre-configured functionality.
+This boilerplate facilitates the creation of apps that _integrate_ rather than _extend_ SharePoint. With it you can create stand-alone React-based applications, fully-branded experiences, RPAs and tools that utilize SharePoint as a data source. Used as a pre-built starter, this project integrates a number of packages and configuration to ease the developer experience, allowing for the local serve of apps while in development, proxying the SharePoint network communication to an actual SharePoint environment as well as other pre-configured functionality.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) with [typescript](https://facebook.github.io/create-react-app/docs/adding-typescript) and enhanced with the following modules to get started building a full-page SharePoint app as quickly as possible.
 
@@ -52,7 +52,7 @@ Next, you'll need to clone the sharepoint-react-app-boilerplate repository and i
 
 ```bash
 # clone the repo
-$ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https://github.com/beyond-sharepoint/sharepoint-react-app-boilerplate/ my-app
+$ git clone -o sharepoint-react-app-boilerplate -b master --single-branch https://github.com/rdacorporation/sharepoint-react-app-boilerplate/ my-app
 
 # change directory to your app
 $ cd my-app
@@ -152,7 +152,7 @@ if the above fails, the commit will not succeed.
 
 If you're _extending_ SharePoint through webparts, application customizers, field customizers, or command sets, SPFx is the choice for you.
 
-If you're _integrating_ SharePoint by treating it as a headless CMS, building apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without paying the SharePoint branding tax, or composing an application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
+If you're _integrating_ SharePoint by treating it as a headless CMS, building React-based apps, RPAs, or tools that interact with SharePoint that are hosted either within or outside of SharePoint, providing a fully-branded experience with SharePoint as the backend without paying the SharePoint branding tax, or composing an React-based application that utilizes SharePoint data in addition to other external services, sharepoint-react-app-boilerplate facilitates these use cases.
 
 ### - Can I build a docker container that hosts my application?
 
@@ -227,6 +227,18 @@ Two VSCode launch configurations exist to allow for debugging unit tests and att
 You may also find success by ensuring that VSCode is configured to 'Auto-Attach' (configuration exists in this project to do so by default) and running `yarn test-debug` in VSCode terminal to debug unit tests. The bottom bar should turn orange and VSCode will stop at breakpoints.
 
 If you have a way of making this process more streamlined and reliable, through better VSCode launch configuration or other avenues, we welcome the pull request.
+
+### - Can I run the unit tests on an automated build server that doesn't have access to a SharePoint environment?
+
+Yes - This boilerplate utilizes Nock to record and mock the SharePoint REST requests/responses. Follow the pattern in ./src/services/\*.test.ts to setup your tests to mock the interaction with SharePoint so that concerns are seperated and you're only testing the front-end components. This solves a plethora of issues commonly encountered when attempting to utilize CI/CD practices while providing a reasonable amount of code coverage with SharePoint (or other) backed REST services.
+
+In General:
+1. Develop components/stores that interact with SharePoint in some manner.
+2. Create unit tests that test these stores.
+3. Run the unit tests so that corresponding test fixtures in ./nock_fixtures/ are created. Remove the ./nock_fixtures folder and re-run if you wish to run all unit tests directly against your SharePoint environment.
+4. Once unit tests pass, commit changes along with the ./nock_fixtures/ folder.
+
+If you have automated builds on commit configured, your build server will run the unit tests using the mocked responses, thus not requiring a live connection to a SharePoint environment from the build server. Consult the [nock documentation](https://github.com/nock/nock#readme) for further information and advanced scenarios.
 
 ### - How do I upgrade the packages within my app?
 
