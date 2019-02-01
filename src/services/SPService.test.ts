@@ -1,16 +1,16 @@
 import nock from 'nock';
 
-import { SPRestContext } from './SPContext';
+import { SPRestService } from './SPService';
 import { setupFixture } from '../util/testUtils';
 
 it('retrieves the current context', async () => {
   await setupFixture();
   nock.back.setMode('record');
-  const { nockDone } = await nock.back('/SPContext.test/retrievesTheCurrentContext.json');
+  const { nockDone } = await nock.back('/SPService.test/retrievesTheCurrentContext.json');
 
-  const context = new SPRestContext();
+  const service = new SPRestService();
 
-  let contextInfo = await context.getContextInfo();
+  let contextInfo = await service.getContextInfo();
   expect(contextInfo).not.toBeNull();
   expect(contextInfo.WebFullUrl).not.toBeNull();
 
@@ -21,9 +21,9 @@ it('retrieves the current context', async () => {
 it('retrieves the root web title', async () => {
   await setupFixture();
   nock.back.setMode('record');
-  const { nockDone } = await nock.back('/SPContext.test/retrievesTheRootWebTitle.json');
+  const { nockDone } = await nock.back('/SPService.test/retrievesTheRootWebTitle.json');
 
-  const context = new SPRestContext();
+  const context = new SPRestService();
 
   let title = await context.getRootWebTitle();
   expect(title).not.toBeNull();
@@ -35,11 +35,11 @@ it('retrieves the root web title', async () => {
 it('retrieves the current user', async () => {
   await setupFixture();
   nock.back.setMode('record');
-  const { nockDone } = await nock.back('/SPContext.test/retrievesTheCurrentUser.json');
+  const { nockDone } = await nock.back('/SPService.test/retrievesTheCurrentUser.json');
 
-  const context = new SPRestContext();
+  const service = new SPRestService();
 
-  let currentUser = await context.getCurrentUser();
+  let currentUser = await service.getCurrentUser();
   expect(currentUser).not.toBeNull();
   expect(currentUser.LoginName).not.toEqual('');
 

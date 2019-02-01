@@ -2,10 +2,13 @@ import 'babel-polyfill';
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import App from './components/App';
+
 import { defaultAppStore } from './AppContext';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
 
 ReactDOM.render(<App appStore={defaultAppStore} />, document.getElementById('root'));
 

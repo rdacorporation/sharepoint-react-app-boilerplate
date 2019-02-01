@@ -1,9 +1,41 @@
 import React from 'react';
+import { WithStyles, withStyles, Theme, createStyles } from '@material-ui/core/styles';
 import logo from './logo.svg';
-import './App.css';
 
-import { AppContext, AppStore } from './AppContext';
+import { AppContext, AppStore } from '../../AppContext';
 import { AppTitle } from './AppTitle';
+
+const styles = (theme: Theme) =>
+  createStyles({
+    app: {
+      textAlign: 'center'
+    },
+    appLogo: {
+      animation: 'App-logo-spin infinite 20s linear',
+      height: '40vmin'
+    },
+    appHeader: {
+      backgroundColor: '#282c34',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 'calc(10px + 2vmin)',
+      color: 'white'
+    },
+    appLink: {
+      color: '#61dafb'
+    },
+    '@keyframes App-logo-spin': {
+      from: {
+        transform: 'rotate(0deg)'
+      },
+      to: {
+        transform: 'rotate(360deg)'
+      }
+    }
+  });
 
 class App extends React.Component<AppProps, AppState> {
   private _isMounted: boolean = false;
@@ -35,19 +67,20 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   public render() {
+    const { classes } = this.props;
     const { appStore } = this.state;
     return (
       <AppContext.Provider value={appStore}>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+        <div className={classes.app}>
+          <header className={classes.appHeader}>
+            <img src={logo} className={classes.appLogo} alt="logo" />
             <p>
               Edit <code>src/App.tsx</code> and save to reload.
             </p>
             <p>
               Connected to <AppTitle />
             </p>
-            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+            <a className={classes.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
               Learn React
             </a>
           </header>
@@ -57,9 +90,9 @@ class App extends React.Component<AppProps, AppState> {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
 
-interface AppProps {
+interface AppProps extends WithStyles<typeof styles> {
   appStore: AppStore;
 }
 

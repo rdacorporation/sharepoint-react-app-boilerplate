@@ -1,6 +1,6 @@
 import React from 'react';
 import { sp } from '@pnp/sp';
-import { SPRestContext, SPContext } from './services/SPContext';
+import { SPRestService, SPService } from './services/SPService';
 import { AppRestService, AppService } from './services/AppService';
 
 sp.setup({
@@ -14,12 +14,12 @@ sp.setup({
 
 export interface AppStore {
   appService: AppService;
-  spContext: SPContext;
+  spService: SPService;
 }
 
 export const defaultAppStore: AppStore = {
   appService: new AppRestService(),
-  spContext: new SPRestContext()
+  spService: new SPRestService()
 };
 
 export const AppContext = React.createContext(defaultAppStore);

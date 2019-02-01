@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContext } from './AppContext';
+import { AppContext } from '../../AppContext';
 
 export class AppTitle extends React.Component<{}, AppTitleState> {
   static contextType = AppContext;
@@ -14,7 +14,7 @@ export class AppTitle extends React.Component<{}, AppTitleState> {
   }
 
   async componentDidMount() {
-    const title = await this.context.spContext.getRootWebTitle();
+    const title = await this.context.spService.getRootWebTitle();
     this.setState({
       title
     });

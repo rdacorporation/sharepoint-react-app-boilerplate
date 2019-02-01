@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { setupFixture, waitForAsync } from './util/testUtils';
-import { AppContext, AppStore } from './AppContext';
-import { SPContext } from './services/SPContext';
-import { AppRestService } from './services/AppService';
+import { setupFixture, waitForAsync } from '../../util/testUtils';
+import { AppContext, AppStore } from '../../AppContext';
+import { SPService } from '../../services/SPService';
+import { AppRestService } from '../../services/AppService';
 import { AppTitle } from './AppTitle';
 
 describe('<AppTitle/>', () => {
@@ -12,8 +12,8 @@ describe('<AppTitle/>', () => {
   beforeEach(async () => {
     await setupFixture();
 
-    // Create the mock of SPContext.getRootWebTitle
-    const MockContext = jest.fn<SPContext>(() => ({
+    // Create the mock of SPService.getRootWebTitle
+    const MockSPService = jest.fn<SPService>(() => ({
       getRootWebTitle: jest.fn(async () => {
         return Promise.resolve('foo');
       })
@@ -27,7 +27,7 @@ describe('<AppTitle/>', () => {
 
     MockAppStore = jest.fn<AppStore>(() => ({
       appService: new MockAppService(),
-      spContext: new MockContext()
+      spService: new MockSPService()
     }));
   });
 
@@ -41,14 +41,10 @@ describe('<AppTitle/>', () => {
 
     await waitForAsync();
 
-    const appTitle = wrapper.find('AppTitle');
-    const instance = appTitle.instance() as AppTitle;
-
-    await instance.componentDidMount();
     const titleText = wrapper.find('#rootWebTitle').text();
     expect(titleText).toEqual('foo');
 
-    expect(mockAppStore.spContext.getRootWebTitle).toHaveBeenCalledTimes(2);
+    expect(mockAppStore.spService.getRootWebTitle).toHaveBeenCalledTimes(1);
     wrapper.unmount();
   });
 });

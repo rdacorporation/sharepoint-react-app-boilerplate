@@ -3,12 +3,24 @@ import { mount } from 'enzyme';
 import { setupFixture, waitForAsync } from './util/testUtils';
 import { AppContext, AppStore } from './AppContext';
 
-const MockAppStore = jest.fn<AppStore>();
+const MockAppStore = jest.fn<AppStore>(() => {
+  return {
+    appService: {
+      getTheAnswerToLifeTheUniverseAndEverything: jest.fn()
+    }
+  };
+});
 
-it('can get the title', async () => {
+it('can provide and consume context', async () => {
   await setupFixture();
-
-  mount(<AppContext.Provider value={new MockAppStore()} />);
+  const appStore = new MockAppStore();
+  mount(
+    <AppContext.Provider value={appStore}>
+      <AppContext.Consumer>{foo => foo.appService.getTheAnswerToLifeTheUniverseAndEverything()}</AppContext.Consumer>
+    </AppContext.Provider>
+  );
 
   await waitForAsync();
+
+  expect(appStore.appService.getTheAnswerToLifeTheUniverseAndEverything).toBeCalledTimes(1);
 });
