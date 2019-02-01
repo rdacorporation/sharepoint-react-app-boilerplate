@@ -7,14 +7,14 @@ import { AppTitle } from './AppTitle';
 
 const styles = (theme: Theme) =>
   createStyles({
-    app: {
+    root: {
       textAlign: 'center'
     },
-    appLogo: {
+    logo: {
       animation: 'App-logo-spin infinite 20s linear',
       height: '40vmin'
     },
-    appHeader: {
+    header: {
       backgroundColor: '#282c34',
       minHeight: '100vh',
       display: 'flex',
@@ -24,7 +24,7 @@ const styles = (theme: Theme) =>
       fontSize: 'calc(10px + 2vmin)',
       color: 'white'
     },
-    appLink: {
+    link: {
       color: '#61dafb'
     },
     '@keyframes App-logo-spin': {
@@ -71,16 +71,16 @@ class App extends React.Component<AppProps, AppState> {
     const { appStore } = this.state;
     return (
       <AppContext.Provider value={appStore}>
-        <div className={classes.app}>
-          <header className={classes.appHeader}>
-            <img src={logo} className={classes.appLogo} alt="logo" />
+        <div className={classes.root}>
+          <header className={classes.header}>
+            <img src={logo} className={classes.logo} alt="logo" />
             <p>
               Edit <code>src/App.tsx</code> and save to reload.
             </p>
             <p>
               Connected to <AppTitle />
             </p>
-            <a className={classes.appLink} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+            <a className={classes.link} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
               Learn React
             </a>
           </header>
