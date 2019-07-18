@@ -33,7 +33,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [craco](https://github.com/sharegate/craco) - A package created by the ShareGate team to allow configuring CRA without ejecting.
 - [prettier](https://prettier.io/) - Why lint when you can auto-fomat your code?
-- [babel-polyfill](https://github.com/babel/babel/tree/master/packages/babel-polyfill) - Polyfills for non-modern browsers.
 - [fetch](https://github.com/github/fetch#readme) - Fetch support for non-modern browsers.
 
 ## Getting Started
@@ -141,7 +140,7 @@ if the above fails, the commit will not succeed.
 
 ## Suggested VSCode Extensions
 
-- `TSLint` - Integrates TSLint with VSCode
+- `eslint` - Integrates ESLint JavaScript into VS Code.
 - `debugger-for-chrome` - debug browser apps running in Chrome via VSCode without leaving VSCode
 - `jest` - auto-runs unit tests and shows code coverage
 - `Wallaby.js` - Continuous testing tool for JavaScript (payware)
@@ -220,7 +219,7 @@ I suggest the [Component Folder Pattern](https://medium.com/styled-components/co
 
 ### - Can I interactively debug with VSCode while running this boilerplate?
 
-Yes - It's a bit finicky, but it works most of the time all of the time. 
+Yes - It's a bit finicky, but it works most of the time all of the time.
 
 Two VSCode launch configurations exist to allow for debugging unit tests and attaching to an existing Chrome instance to allow for debugging (`debugger-for-chrome` VSCode extension is required).
 
@@ -233,6 +232,7 @@ If you have a way of making this process more streamlined and reliable, through 
 Yes - This boilerplate utilizes Nock to record and mock the SharePoint REST requests/responses. Follow the pattern in ./src/services/\*.test.ts to setup your tests to mock the interaction with SharePoint so that concerns are seperated and you're only testing the front-end components. This solves a plethora of issues commonly encountered when attempting to utilize CI/CD practices while providing a reasonable amount of code coverage with SharePoint (or other) backed REST services.
 
 In General:
+
 1. Develop components/stores that interact with SharePoint in some manner.
 2. Create unit tests that test these stores.
 3. Run the unit tests so that corresponding test fixtures in ./nock_fixtures/ are created. Remove the ./nock_fixtures folder and re-run if you wish to run all unit tests directly against your SharePoint environment.
