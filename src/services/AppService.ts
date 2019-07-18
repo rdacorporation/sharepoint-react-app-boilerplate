@@ -1,13 +1,10 @@
-import axios from 'axios';
-
 /**
  * Example of an application service that calls a rest endpoint.
- * This is just an example of calling a REST service hosted by SharePoint or external to SharePoint.
  */
 export class AppRestService implements AppService {
   private _webFullUrl: string | undefined;
 
-  constructor(webFullUrl?: string) {
+  public constructor(webFullUrl?: string) {
     if (!webFullUrl) {
       webFullUrl = window.location.href;
     }
@@ -15,18 +12,13 @@ export class AppRestService implements AppService {
     this._webFullUrl = webFullUrl;
   }
 
-  get webFullUrl() {
+  public get webFullUrl() {
     return this._webFullUrl;
   }
 
-  public async getBaristaUrl(scriptOrFilePath: string) {
-    return `${this._webFullUrl}_vti_bin/barista/v1/barista.svc/eval?c=${encodeURIComponent(scriptOrFilePath)}`;
-  }
-
   public async getTheAnswerToLifeTheUniverseAndEverything() {
-    const url = await this.getBaristaUrl('6*7');
-    const result = await axios.get(url);
-    return result.data;
+    // A real call would use axios or fetch or whatever to do a ajax call.
+    return Promise.resolve(42);
   }
 }
 
