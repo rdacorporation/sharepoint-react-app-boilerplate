@@ -41,7 +41,7 @@ const useStyles = makeStyles<Theme>({
 const App: React.FunctionComponent = () => {
   const [theAnswer, setTheAnswer] = useState(0);
   const classes = useStyles();
-  let appStore = useAppValue();
+  const appStore = useAppValue();
 
   useAsyncEffect(async () => {
     // This is just an example.

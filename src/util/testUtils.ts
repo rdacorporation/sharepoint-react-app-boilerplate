@@ -1,7 +1,7 @@
 import nock from 'nock';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { act } from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 import { sp } from '@pnp/sp';
 import path from 'path';
 

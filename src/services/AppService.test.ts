@@ -17,7 +17,7 @@ it('retrieves the answer to life the universe and everything', async () => {
 
   const appService = new AppRestService(baseUrl);
 
-  let theAnswer = await appService.getTheAnswerToLifeTheUniverseAndEverything();
+  const theAnswer = await appService.getTheAnswerToLifeTheUniverseAndEverything();
   expect(theAnswer).toStrictEqual(42);
 
   nockDone();

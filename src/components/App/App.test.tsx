@@ -17,7 +17,7 @@ const MockSPService = jest.fn<SPService, any>(() => ({
 }));
 
 const MockAppService = jest.fn<AppRestService, any>(() => {
-  var ars = new AppRestService();
+  const ars = new AppRestService();
   return ars;
 });
 
