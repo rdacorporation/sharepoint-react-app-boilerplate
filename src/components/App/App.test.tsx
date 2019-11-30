@@ -1,11 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { ReactWrapper, mount } from 'enzyme';
 import { setupFixture } from '../../util/testUtils';
-import App from './';
+import App from './App';
 
 import { SPService } from '../../services/SPService';
 import { AppRestService } from '../../services/AppService';
 import * as AppContext from '../../AppContext';
+import { act } from 'react-dom/test-utils';
 
 // Create the mock of SPService.getRootWebTitle
 const MockSPService = jest.fn<SPService, any>(() => ({
@@ -31,20 +32,25 @@ describe('<App/>', () => {
     setupFixture();
   });
 
-  it('renders without crashing', () => {
+  it('renders without crashing', async () => {
     const mockAppStore = new MockAppStore();
 
     jest.spyOn(AppContext, 'useAppValue').mockImplementation(() => {
       return mockAppStore;
     });
 
-    // Sigh. https://github.com/testing-library/react-testing-library/issues/281
+    let wrapper: ReactWrapper<any, Readonly<{}>, React.Component<{}, {}, any>> | undefined;
+    await act(async () => {
+      wrapper = mount(<App />);
+    });
 
-    const wrapper = shallow(<App />);
+    if (!wrapper) {
+      throw Error('Wrapper was undefined.');
+    }
 
-    // const titleText = wrapper.find('#rootWebTitle').text();
-    // expect(titleText).toEqual('foo');
-    // expect(mockAppStore.spService.getRootWebTitle).toHaveBeenCalledTimes(1);
+    const titleText = wrapper.find('#rootWebTitle').text();
+    expect(titleText).toEqual('foo');
+    expect(mockAppStore.spService.getRootWebTitle).toHaveBeenCalled();
 
     wrapper.unmount();
   });

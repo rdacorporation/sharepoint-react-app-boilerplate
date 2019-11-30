@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useAsyncEffect } from '../../util/hooks';
+import React, { useState, useEffect } from 'react';
 import { Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 import logo from './logo.svg';
@@ -43,10 +42,12 @@ const App: React.FunctionComponent = () => {
   const classes = useStyles();
   const appStore = useAppValue();
 
-  useAsyncEffect(async () => {
+  useEffect(() => {
     // This is just an example.
-    const answer = await appStore.appService.getTheAnswerToLifeTheUniverseAndEverything();
-    setTheAnswer(answer);
+    (async () => {
+      const answer = await appStore.appService.getTheAnswerToLifeTheUniverseAndEverything();
+      setTheAnswer(answer);
+    })();
   });
 
   return (

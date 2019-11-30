@@ -12,6 +12,7 @@ sp.setup({
   }
 });
 
+/* istanbul ignore next */
 export interface AppStore {
   appService: AppService;
   spService: SPService;
@@ -22,4 +23,5 @@ export const AppContext = React.createContext<AppStore>({
   spService: new SPRestService()
 });
 
+/* istanbul ignore next */
 export const useAppValue = () => useContext(AppContext);

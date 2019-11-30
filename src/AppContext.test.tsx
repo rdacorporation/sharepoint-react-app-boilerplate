@@ -2,17 +2,27 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { setupFixture, waitForAsync } from './util/testUtils';
 import { AppContext, AppStore } from './AppContext';
+import { SPService } from './services/SPService';
 
-const MockAppStore = jest.fn<AppStore>(() => {
+const MockSPService = jest.fn<SPService, any>(() => ({
+  getRootWebTitle: jest.fn(() => {
+    return Promise.resolve('foo');
+  }),
+  getCurrentUser: jest.fn(),
+  getContextInfo: jest.fn()
+}));
+
+const MockAppStore = jest.fn<AppStore, []>(() => {
   return {
     appService: {
       getTheAnswerToLifeTheUniverseAndEverything: jest.fn()
-    }
+    },
+    spService: new MockSPService()
   };
 });
 
 it('can provide and consume context', async () => {
-  await setupFixture();
+  setupFixture();
   const appStore = new MockAppStore();
   mount(
     <AppContext.Provider value={appStore}>
