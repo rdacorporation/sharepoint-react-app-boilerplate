@@ -81,7 +81,7 @@
     "@pnp/odata": "^1.3.7",
     "@pnp/sp": "^1.3.7",
     "autobind-decorator": "^2.4.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "clipboard": "^2.0.4",
     "lodash": "^4.17.15",
